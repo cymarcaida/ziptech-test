@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { FirebaseRepository } from '../../src/firebase/firebase.repository';
+import { ProductRepository } from '../../src/firebase/product.repository';
 import { ProductDto } from '../../src/product/dto/product.dto';
 import { ProductType } from '../../src/product/enums/type.enum';
 import { ProductService } from '../../src/product/product.service';
 
 describe('ProductService', () => {
 	let service: ProductService;
-	let repository: FirebaseRepository;
+	let repository: ProductRepository;
 
 	const mockId = "testId"
 
@@ -42,12 +42,12 @@ describe('ProductService', () => {
 		const module: TestingModule = await Test.createTestingModule({
 			providers: [
 				ProductService,
-				{ provide: FirebaseRepository, useValue: mockItemsRepository },
+				{ provide: ProductRepository, useValue: mockItemsRepository },
 			],
 		}).compile();
 
 		service = module.get<ProductService>(ProductService);
-		repository = module.get<FirebaseRepository>(FirebaseRepository);
+		repository = module.get<ProductRepository>(ProductRepository);
 	});
 
 	it('should be defined', () => {
