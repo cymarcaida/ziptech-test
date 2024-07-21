@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { AccountRepository } from '../firebase/account.repository';
-import { LoginDto } from 'src/auth/login.dto';
+import { LoginDto } from 'src/auth/dtos/login.dto';
 
 export type User = any;
 
