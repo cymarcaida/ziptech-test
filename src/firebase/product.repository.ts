@@ -3,7 +3,7 @@ import { app } from 'firebase-admin';
 import { ProductDto } from 'src/product/dto/product.dto';
 
 @Injectable()
-export class FirebaseRepository {
+export class ProductRepository {
 	#db: FirebaseFirestore.Firestore;
 	#collection: FirebaseFirestore.CollectionReference;
 
