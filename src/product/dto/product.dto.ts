@@ -1,4 +1,3 @@
-// src/items/dto/create-item.dto.ts
 import { IsString, IsInt, IsOptional, IsNotEmpty, IsEnum } from 'class-validator';
 import { ProductType } from '../enums/type.enum';
 
