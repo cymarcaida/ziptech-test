@@ -1,29 +1,29 @@
 import { Injectable } from '@nestjs/common';
 
-import { FirebaseRepository } from '../firebase/firebase.repository';
 import { ProductDto } from './dto/product.dto';
+import { ProductRepository } from 'src/firebase/product.repository';
 
 @Injectable()
 export class ProductService {
-  constructor(private firebaseRepository: FirebaseRepository) { }
+  constructor(private productRepository: ProductRepository) { }
 
   createProduct(productDto: ProductDto) {
-    return this.firebaseRepository.create(productDto);
+    return this.productRepository.create(productDto);
   }
 
   retrieveProducts() {
-    return this.firebaseRepository.findAll();
+    return this.productRepository.findAll();
   }
 
   retrieveProduct(id: string) {
-    return this.firebaseRepository.find(id);
+    return this.productRepository.find(id);
   }
 
   updateProduct(id: string, productDto: ProductDto) {
-    return this.firebaseRepository.update(id, productDto);
+    return this.productRepository.update(id, productDto);
   }
 
   deleteProduct(id: string) {
-    return this.firebaseRepository.remove(id);
+    return this.productRepository.remove(id);
   }
 }
